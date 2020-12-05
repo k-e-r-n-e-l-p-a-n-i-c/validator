@@ -13,7 +13,7 @@ type App struct {
 
 func (c App) Validate() revel.Result {
 	var request v1beta1.AdmissionReview
-	c.BindJSON(request)
+	c.params.BindJSON(request)
 
 	fmt.Println(request)
 	return c.RenderText("ok")
