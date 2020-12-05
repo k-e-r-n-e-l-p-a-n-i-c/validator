@@ -26,5 +26,5 @@ func (c App) Validate() revel.Result {
 			},
 		},
 	}
-	return c.RenderText(arResponse)
+	return c.RenderJSON(arResponse)
 }
