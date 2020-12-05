@@ -5,6 +5,7 @@ import (
 
 	"github.com/revel/revel"
 	"k8s.io/api/admission/v1beta1"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 type App struct {
