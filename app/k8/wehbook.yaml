@@ -1,0 +1,17 @@
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingWebhookConfiguration
+metadata:
+  name: validator
+webhooks:
+  - name: validator.default.svc
+    clientConfig:
+      service:
+        name: validator
+        namespace: default
+        path: "/validate"
+      caBundle: "paste base64 encoded ca cert here"
+    rules:
+      - operations: ["CREATE"]
+        apiGroups: [""]
+        apiVersions: ["v1"]
+        resources: ["pods"]

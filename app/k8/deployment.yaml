@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: validator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: validator
+  template:
+    metadata:
+      labels:
+        app: validator
+    spec:
+      containers:
+      - name: webhook
+        image: arunmudaliar/validator:latest
+        ports:
+        - containerPort: 443
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: validator
+  namespace: default
+  labels:
+    app: validator
+spec:
+  ports:
+  - name: webhook
+    port: 443
+  selector:
+    app: validator
