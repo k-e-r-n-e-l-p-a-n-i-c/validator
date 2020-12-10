@@ -8,7 +8,7 @@ Communication between Kubernetes API server and custom admission controler webho
 1) Install cfssl utility on a linux OS.
 
     curl -s -L -o /usr/bin/cfssl https://pkg.cfssl.org/R1.2/cfssl_linux-amd64  
-    curl -s -L -o /usr/bin/cfssljson https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64 
+    curl -s -L -o /usr/bin/cfssljson https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64  
     chmod +x /usr/bin/{cfssl,cfssljson}
 2) Initialize and generate necessary config files
     cfssl gencert -initca ca-csr.json | cfssljson -bare ca
