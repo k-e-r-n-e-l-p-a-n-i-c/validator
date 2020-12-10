@@ -6,7 +6,8 @@ A custom Admission Controller written in Golang and Revel WebFramework to unders
 Communication between Kubernetes API server and custom admission controler webhook is secured by ssl certificates. Follow below steps to generate a self signed ssl certificate:
 
 1) Install cfssl utility on a linux OS.
-    curl -s -L -o /usr/bin/cfssl https://pkg.cfssl.org/R1.2/cfssl_linux-amd64
+
+    curl -s -L -o /usr/bin/cfssl https://pkg.cfssl.org/R1.2/cfssl_linux-amd64 
     curl -s -L -o /usr/bin/cfssljson https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64
     chmod +x /usr/bin/{cfssl,cfssljson}
 2) Initialize and generate necessary config files
