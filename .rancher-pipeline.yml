@@ -1,0 +1,12 @@
+# example
+stages:
+  - name: Build Stage
+    # Conditions for stages
+    when:
+      branch: master
+      event: [ push, pull_request ]
+    # Multiple steps run concurrently
+    steps:
+    - runScriptConfig:
+        image: busybox
+        shellScript: echo "hello world
